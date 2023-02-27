@@ -1,0 +1,224 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3536), pid=2376, tid=1136
+#
+# JRE version:  (19.0.2+7) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (19.0.2+7-44, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @D:\Code\Android\React_Native\Restaurant\node_modules\react-native-gesture-handler\android\build\20230223_8089294600900951140.compiler.options
+
+Host: Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2546)
+Time: Thu Feb 23 20:57:36 2023 SE Asia Standard Time elapsed time: 0.015496 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000277bd87e800):  JavaThread "Unknown thread" [_thread_in_vm, id=1136, stack(0x000000b628c00000,0x000000b628d00000)]
+
+Stack: [0x000000b628c00000,0x000000b628d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ee21a]
+V  [jvm.dll+0x85765e]
+V  [jvm.dll+0x85904e]
+V  [jvm.dll+0x859703]
+V  [jvm.dll+0x28298f]
+V  [jvm.dll+0x6eb009]
+V  [jvm.dll+0x6dfbaa]
+V  [jvm.dll+0x3573f6]
+V  [jvm.dll+0x35ee56]
+V  [jvm.dll+0x3b541e]
+V  [jvm.dll+0x3b564f]
+V  [jvm.dll+0x32c9ea]
+V  [jvm.dll+0x32d89e]
+V  [jvm.dll+0x821780]
+V  [jvm.dll+0x3c2661]
+V  [jvm.dll+0x801f51]
+V  [jvm.dll+0x44ae8f]
+V  [jvm.dll+0x44c811]
+C  [jli.dll+0x5287]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17614]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffb199cd048, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000277bd913410 WorkerThread "GC Thread#0" [stack: 0x000000b628d00000,0x000000b628e00000] [id=9480]
+  0x00000277bd9240b0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000b628e00000,0x000000b628f00000] [id=13172]
+  0x00000277bd9255c0 WorkerThread "G1 Conc#0" [stack: 0x000000b628f00000,0x000000b629000000] [id=12148]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb1918d427]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000277bd87b850] Heap_lock - owner thread: 0x00000277bd87e800
+
+Heap address: 0x0000000081600000, size: 2026 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000081600000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb19596649]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-19\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff72ce90000 - 0x00007ff72cea0000 	C:\Program Files\Java\jdk-19\bin\java.exe
+0x00007ffb77490000 - 0x00007ffb77688000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffb754d0000 - 0x00007ffb7558f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffb74cc0000 - 0x00007ffb74f92000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffb753d0000 - 0x00007ffb754d0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffb687a0000 - 0x00007ffb687bb000 	C:\Program Files\Java\jdk-19\bin\VCRUNTIME140.dll
+0x00007ffb687c0000 - 0x00007ffb687d8000 	C:\Program Files\Java\jdk-19\bin\jli.dll
+0x00007ffb759f0000 - 0x00007ffb75a9e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffb758f0000 - 0x00007ffb7598e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffb76210000 - 0x00007ffb762ac000 	C:\Windows\System32\sechost.dll
+0x00007ffb77320000 - 0x00007ffb77445000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffb76480000 - 0x00007ffb76621000 	C:\Windows\System32\USER32.dll
+0x00007ffb752f0000 - 0x00007ffb75312000 	C:\Windows\System32\win32u.dll
+0x00007ffb662b0000 - 0x00007ffb6654a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffb75ce0000 - 0x00007ffb75d0b000 	C:\Windows\System32\GDI32.dll
+0x00007ffb74b80000 - 0x00007ffb74c8f000 	C:\Windows\System32\gdi32full.dll
+0x00007ffb75250000 - 0x00007ffb752ed000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffb68ed0000 - 0x00007ffb68eda000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffb76920000 - 0x00007ffb76952000 	C:\Windows\System32\IMM32.DLL
+0x00007ffb70820000 - 0x00007ffb7082c000 	C:\Program Files\Java\jdk-19\bin\vcruntime140_1.dll
+0x00007ffb59b50000 - 0x00007ffb59bde000 	C:\Program Files\Java\jdk-19\bin\msvcp140.dll
+0x00007ffb18e50000 - 0x00007ffb19b10000 	C:\Program Files\Java\jdk-19\bin\server\jvm.dll
+0x00007ffb5a070000 - 0x00007ffb5a079000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffb75aa0000 - 0x00007ffb75b0b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffb66550000 - 0x00007ffb66577000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffb72a40000 - 0x00007ffb72a52000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffb6fb70000 - 0x00007ffb6fb7a000 	C:\Program Files\Java\jdk-19\bin\jimage.dll
+0x00007ffb65e90000 - 0x00007ffb66074000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffb65c80000 - 0x00007ffb65cb5000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffb74fa0000 - 0x00007ffb75022000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffb68770000 - 0x00007ffb68796000 	C:\Program Files\Java\jdk-19\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-19\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-19\bin\server
+
+VM Arguments:
+java_command: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @D:\Code\Android\React_Native\Restaurant\node_modules\react-native-gesture-handler\android\build\20230223_8089294600900951140.compiler.options
+java_class_path (initial): C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-compiler-embeddable\1.6.21\97bdd5a752ce73b58ef16c17bc7f0ea2faff7a2e\kotlin-compiler-embeddable-1.6.21.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-reflect\1.6.21\5dc3574d9b7bebfcb4ec6b10ada4aaa9e140bd0b\kotlin-reflect-1.6.21.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.6.21\11ef67f1900634fd951bad28c53ec957fabbe5b8\kotlin-stdlib-1.6.21.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-script-runtime\1.6.21\99c6675100da5d6d5b1c5a1032f27f28008d101b\kotlin-script-runtime-1.6.21.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-daemon-embeddable\1.6.21\46b78cf392e1c4f10854c3cadba44abb7b82250f\kotlin-daemon-embeddable-1.6.21.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.intellij.deps\trove4j\1.0.20200330\3afb14d5f9ceb459d724e907a21145e8ff394f02\trove4j-1.0.20200330.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.6.0\330f2244e9030119ab3030fc3fededc86713d9cc\jna-5.6.0.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.6.21\5e5b55c26dbc80372a920aef60eb774b714559b8\kotlin-stdlib-common-1.6.21.jar;C:\Users\minht\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2124414976                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2124414976                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Progra~1\Java\jdk-19
+CLASSPATH=D:\Code\Android\React_Native\Restaurant\android\\gradle\wrapper\gradle-wrapper.jar
+PATH=D:\Code\Android\React_Native\Restaurant\android\node_modules\.bin;D:\Code\Android\React_Native\Restaurant\node_modules\.bin;D:\Code\Android\React_Native\node_modules\.bin;D:\Code\Android\node_modules\.bin;D:\Code\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs;D:\Code\Android\React_Native\Restaurant\node_modules\.bin;D:\Code\Android\React_Native\node_modules\.bin;D:\Code\Android\node_modules\.bin;D:\Code\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;D:\Code\Android\React_Native\Restaurant\node_modules\.bin;D:\Code\Android\React_Native\node_modules\.bin;D:\Code\Android\node_modules\.bin;D:\Code\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs;D:\Code\Android\React_Native\Restaurant\node_modules\.bin;D:\Code\Android\React_Native\node_modules\.bin;D:\Code\Android\node_modules\.bin;D:\Code\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Program Files\Java\jdk-19\bin;C:\Progra~1\Java\jdk-19\bin;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\OpenJDK\openjdk-11.0.16_8\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\hadoop-3.3.0\bin;C:\hadoop-3.3.0\sbin;C:\Users\minht\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\minht\AppData\Local\Programs\Python\Python311\;C:\Users\minht\AppData\Local\Microsoft\WindowsApps;C:\Users\minht\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\minht\AppData\Roaming\npm;C:\Users\minht\AppData\Local\Android\sdk\platform-tools
+USERNAME=minht
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+TMP=C:\Users\minht\AppData\Local\Temp
+TEMP=C:\Users\minht\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.2546)
+OS uptime: 0 days 3:18 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4 microcode 0x2d, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, rdtscp
+
+Memory: 4k page, system-wide physical 8103M (645M free)
+TotalPageFile size 12199M (AvailPageFile size 215M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 52M, peak: 180M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (19.0.2+7-44) for windows-amd64 JRE (19.0.2+7-44), built on 2022-11-30T18:02:09Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.

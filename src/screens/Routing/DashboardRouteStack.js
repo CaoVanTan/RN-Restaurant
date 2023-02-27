@@ -1,0 +1,93 @@
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { View, StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
+
+import HomeScreen from '../Dashboard/HomeScreen/HomeScreen';
+import OrdersScreen from '../Dashboard/Orders/OrdersScreen';
+import AccountScreen from '../Dashboard/Account/AccountScreen';
+import SearchScreenRouting from './SearchScreenRouting';
+import { theme } from '../../constants/theme';
+import SearchHeader from './Header/SearchHeader';
+import OrdersHeader from './Header/OrdersHeader';
+import DashboardHeader from './Header/DashboardHeader';
+
+function DashboardRouteStack(route) {
+    const DashboardNavigationStackTabs = createBottomTabNavigator();
+    const iconNavbar = [
+        { iconName: 'fastfood', name: 'Home' },
+        { iconName: 'search', name: 'Search' },
+        { iconName: 'wysiwyg', name: 'Orders' },
+        { iconName: 'account-circle', name: 'Account' },
+    ];
+    const bottomSheet = useSelector((props) => props.bottomSheet);
+    const handleNavbar = ({ route, focused }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            const pick = iconNavbar.find((i) => i?.name === route.name);
+            if (pick) {
+                iconName = focused ? pick.iconName : pick.iconName;
+            }
+            // You can return any component that you like here!
+            return <MaterialIcons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: theme.colors.primary,
+        tabBarInactiveTintColor: theme.colors.backdrop,
+        tabBarLabelStyle: {
+            fontSize: 15,
+            paddingBottom: 10,
+        },
+        tabBarStyle: {
+            position: 'absolute',
+            height: 60,
+            padding: 5,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            display: bottomSheet.sheetRef ? 'none' : 'flex',
+        },
+        tabBarBackground: () => <View style={style.tabNavigation} />,
+    });
+    return (
+        <DashboardNavigationStackTabs.Navigator initialRouteName={'Home'} screenOptions={handleNavbar}>
+            <DashboardNavigationStackTabs.Screen
+                options={{ header: () => <DashboardHeader /> }}
+                name="Home"
+                component={HomeScreen}
+            />
+            <DashboardNavigationStackTabs.Screen
+                options={{
+                    header: () => <SearchHeader />,
+                }}
+                name="Search"
+                component={SearchScreenRouting}
+            />
+            <DashboardNavigationStackTabs.Screen
+                options={{
+                    header: () => <OrdersHeader />,
+                }}
+                name="Orders"
+                component={OrdersScreen}
+            />
+            <DashboardNavigationStackTabs.Screen
+                options={{ headerShown: false }}
+                name="Account"
+                component={AccountScreen}
+            />
+        </DashboardNavigationStackTabs.Navigator>
+    );
+}
+
+const style = StyleSheet.create({
+    tabNavigation: {
+        backgroundColor: '#e8fdf1',
+        width: '100%',
+        height: '100%',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        elevation: 20,
+        shadowColor: '#000',
+    },
+});
+
+export default DashboardRouteStack;
